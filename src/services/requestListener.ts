@@ -1,16 +1,10 @@
 import { v1 as generateId, validate } from 'uuid';
 // @ts-ignore
 import { httpStatusCodes } from '../utils/constants.ts';
+import { IncomingMessage, ServerResponse } from 'http';
 
-const memory = [
-  {
-    id: '816c7640-84a6-11ed-b9af-f9bfa5310712',
-    username: 'John Doe',
-    age: 11,
-    hobbies: ['hiking', 'swimming']
-  }
-];
-export const requestListener = (req, res) => {
+const memory: { id: string; username: string; age: number; hobbies: string[]; }[] = [];
+export const requestListener = (req: IncomingMessage, res: ServerResponse) => {
   try {
     if (req.method === 'GET' && req.url === '/api/users') {
       const body = JSON.stringify(memory);
@@ -83,7 +77,6 @@ export const requestListener = (req, res) => {
       const id = req.url.split('/')[3];
       const userFind = memory.find((user) => user.id === id);
       if (userFind) {
-        console.log('1');
         memory.splice(
           memory.findIndex((user) => user.id === id),
           1

@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import NodemonPlugin from 'nodemon-webpack-plugin';
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-// import { NodePolyfillPlugin } from 'node-polyfill-webpack-plugin';
 
 const config = {
   entry: './src/index.ts',

@@ -1,5 +1,5 @@
 import cluster from 'cluster';
-import http from 'http';
+import http, { IncomingMessage, ServerResponse } from 'http';
 import { cpus } from 'os';
 import process from 'process';
 import dotenv from 'dotenv';
@@ -15,7 +15,7 @@ if (cluster.isPrimary) {
     // cluster.workers[i].on('message', messageHandler);
   }
 
-  const controllerRequest = (req, res) => {
+  const controllerRequest = (req: IncomingMessage, res: ServerResponse) => {
     requestListener(req, res);
   };
   http.createServer(controllerRequest).listen(process.env.PORT);
