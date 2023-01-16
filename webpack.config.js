@@ -34,7 +34,11 @@ const config = {
   },
   module: {
     rules: [
-
+      {
+        use: 'ts-loader',
+        test: /\.(ts|tsx)?$/,
+        exclude: /node_modules/
+      }
     ]
   },
   node: {
@@ -47,14 +51,7 @@ const config = {
       script: 'ts-node-esm src/index.ts',
       ext: 'mts'
     })
-  ],
-  devServer: {
-    static: {
-      directory: path.join(dirname, 'src')
-    },
-    compress: true,
-    port: 9000
-  }
+  ]
 };
 
 export default config;

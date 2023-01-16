@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { describe, it } from 'node:test';
+import { it } from 'node:test';
 import './index.js';
 
 const server = `http://localhost:${process.env.PORT || 3000}/`;
