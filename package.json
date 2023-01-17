@@ -1,0 +1,50 @@
+{
+  "name": "crud_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start:dev": "nodemon --exec 'ts-node-esm src/index.ts' --ext ts",
+    "start:prod": "webpack --mode production && node dist/main.cjs",
+    "start:multi": "nodemon --exec 'ts-node-esm src/multi.ts'  --ext ts",
+    "test": "nodemon --exec 'ts-node-esm src/test.ts'  --ext ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisselet/crud_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisselet/crud_api/issues"
+  },
+  "homepage": "https://github.com/denisselet/crud_api#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-webpack-plugin": "^3.2.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "nodemon-webpack-plugin": "^4.8.1",
+    "prettier": "^2.8.1",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "keywords": []
+}
